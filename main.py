@@ -86,16 +86,16 @@ async def on_guild_remove(guild):
         json.dump(data, f)
 
 
-#@tasks.loop(seconds=10)
-#async def statusloop():
-#    await client.wait_until_ready()
-#    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"s!help"))
-#    await sleep(10)
-#    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"over {len(client.guilds)} guilds"))
-#    await sleep(10)
-#    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"over {len(set(client.get_all_members()))} members"))
-#    await sleep(10)
-#statusloop.start()
+@tasks.loop(seconds=10)
+async def statusloop():
+    await client.wait_until_ready()
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"s!help"))
+    await sleep(10)
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"over {len(client.guilds)} guilds"))
+    await sleep(10)
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"over {len(set(client.get_all_members()))} members"))
+    await sleep(10)
+statusloop.start()
 
 
 @client.event
