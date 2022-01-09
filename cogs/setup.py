@@ -203,7 +203,7 @@ class Setup(commands.Cog):
         if not (perms.administrator):
             return await ctx.send("Sorry but I would need the administrator permissions to continue!")
 
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         alarm = ("🚨")
         shild = ("🛡️")
         filter = ("🚫")
