@@ -6,3 +6,6 @@ pillow
 discord_components
 reactionmenu
 pytz
+discord-py-slash-command
+kwargs
+discapty
