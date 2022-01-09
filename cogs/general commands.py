@@ -40,7 +40,7 @@ class General(commands.Cog):
 
     @commands.command(description="Sends you a bot invite link via DM")
     async def invite(self, ctx):
-        invitelink = ("https://discord.com/api/oauth2/authorize?client_id=882901345466724373&permissions=8&scope=bot")
+        invitelink = ("https://discord.com/api/oauth2/authorize?client_id=929676015217803275&permissions=8&scope=bot")
         msg = await ctx.send("Check your DMs")
         try:
             await ctx.author.send(f"`Invite Link`: {invitelink}")
@@ -49,7 +49,7 @@ class General(commands.Cog):
 
     @commands.command(description="Shows information about this server")
     async def serverinfo(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         guild_roles = len(ctx.guild.roles)
         guild_members = len(ctx.guild.members)
         text_channels = len(ctx.guild.text_channels)
@@ -92,12 +92,12 @@ class General(commands.Cog):
 
     @commands.command(description="Shows information about a user")
     async def userinfo(self, ctx, member: discord.Member = None):
-        dnd = ("<:dnd:913844829350395924>")
-        online = ("<:online:913846756662460456>")
-        idle = ("<:idle:913848622595067904>")
+        dnd = ("⛔")
+        online = ("🟢")
+        idle = ("🌙")
         data = getConfig(ctx.guild.id)
         whitelist = data["whitelist"]
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         member = ctx.author if not member else member
         member_roles = len(member.roles)
         userinfo = discord.Embed(colour=0x2f3136, title=f"{member.name}'s profile")
@@ -154,7 +154,7 @@ class General(commands.Cog):
     @commands.command(usage="<invitelink/code>",
                       description="Shows information about a invite link")
     async def inviteinfo(self, ctx, invite):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         invite = await self.client.fetch_invite(invite)
         inviteinfo = discord.Embed(colour=0x2f3136, title=f"Invite Info")
         inviteinfo.add_field(name="General Information: ",
@@ -173,7 +173,7 @@ class General(commands.Cog):
     @commands.command(name="commands",
                       description="Shows you all available commands")
     async def _commands(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         prefix = await getGuildPrefix(self.client, ctx)
         menu = ButtonsMenu(ctx, menu_type=ButtonsMenu.TypeEmbed)
 
@@ -256,7 +256,7 @@ class General(commands.Cog):
     @commands.command(description="Shows you the current server settings")
     @commands.has_permissions(administrator=True)
     async def settings(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         alarm = ("🚨")
         shild = ("🛡️")
         general = ("⚙")
@@ -407,7 +407,7 @@ class General(commands.Cog):
 
     @commands.group(invoke_without_command=True, description="Shows you all available Server Security features")
     async def features(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         alarm = ("🚨")
         shild = ("🛡️")
         filter = ("🚫")
@@ -415,7 +415,7 @@ class General(commands.Cog):
         auto = ("🤖")
         raid = ("🔒")
         info = ("ℹ")
-        roles = ("<:Role:911574636280561694>")
+        roles = ("📌")
         prefix = await getGuildPrefix(self.client, ctx)
         menu = ButtonsMenu(ctx, menu_type=ButtonsMenu.TypeEmbed)
 
@@ -526,7 +526,7 @@ class General(commands.Cog):
 
     @features.command()
     async def captcha(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         verify = ("📝")
         prefix = await getGuildPrefix(self.client, ctx)
         embed = discord.Embed(title=f"{verify} Captcha-Verification",
@@ -540,7 +540,7 @@ class General(commands.Cog):
 
     @features.command()
     async def antinuke(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         shild = ("🛡️")
         prefix = await getGuildPrefix(self.client, ctx)
         embed = discord.Embed(title=f"{shild} Anti-Nuke",
@@ -556,7 +556,7 @@ class General(commands.Cog):
 
     @features.command()
     async def joinfilter(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         filter = ("🚫")
         prefix = await getGuildPrefix(self.client, ctx)
         embed = discord.Embed(title=f"{filter} Join-Filter",
@@ -571,7 +571,7 @@ class General(commands.Cog):
 
     @features.command()
     async def automoderation(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         auto = ("🤖")
         prefix = await getGuildPrefix(self.client, ctx)
         embed = discord.Embed(title=f"{auto} Auto-Moderation",
@@ -587,7 +587,7 @@ class General(commands.Cog):
 
     @features.command()
     async def panicmode(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         alarm = ("🚨")
         prefix = await getGuildPrefix(self.client, ctx)
         embed = discord.Embed(title=f"{alarm} Panic-Mode",
@@ -600,7 +600,7 @@ class General(commands.Cog):
 
     @features.command()
     async def raidmode(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         raid = ("🔒")
         prefix = await getGuildPrefix(self.client, ctx)
         raidmode = discord.Embed(title=f"{raid} Raid-Mode",
@@ -612,8 +612,8 @@ class General(commands.Cog):
 
     @features.command()
     async def rolemanagement(self, ctx):
-        roles = ("<:Role:911574636280561694>")
-        emote = ("<:rightArrow:904016483108143115>")
+        roles = ("📌")
+        emote = ("👉")
         role = discord.Embed(title=f"{roles} Role Management",
                              description=f"The role management feature includes the Join Role and Reaction Role features",
                              color=discord.Colour.blue())
@@ -625,7 +625,7 @@ class General(commands.Cog):
 
     @commands.command(usage="user id", description="Shows you information about a user who is not on this server")
     async def fetchuser(self, ctx, user: discord.User = id):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         user = await self.client.fetch_user(int(user.id))
         embed = discord.Embed(colour=0x2f3136, title=f"Who is {user.name}?")
         embed.add_field(name=f"General Information",
