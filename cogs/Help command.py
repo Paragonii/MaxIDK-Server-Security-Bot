@@ -11,7 +11,7 @@ class Help(commands.Cog):
     @commands.command()
     async def help(self, ctx):
         prefix = await getGuildPrefix(self.client, ctx)
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
 
         menu = ButtonsMenu(ctx, menu_type=ButtonsMenu.TypeEmbed)
 
