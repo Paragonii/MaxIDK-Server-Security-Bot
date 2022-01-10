@@ -20,7 +20,7 @@ class General(commands.Cog):
 
     @commands.command(description="Shows information about Server Security")
     async def about(self, ctx):
-        emote = ("<:rightArrow:904016483108143115>")
+        emote = ("👉")
         dpyVersion = discord.__version__
         serverCount = len(self.client.guilds)
         about = discord.Embed(colour=0x2f3136, title=f"About {self.client.user.name}")
@@ -40,12 +40,18 @@ class General(commands.Cog):
 
     @commands.command(description="Sends you a bot invite link via DM")
     async def invite(self, ctx):
-        invitelink = ("https://discord.com/api/oauth2/authorize?client_id=929676015217803275&permissions=8&scope=bot")
-        msg = await ctx.send("Check your DMs")
-        try:
-            await ctx.author.send(f"`Invite Link`: {invitelink}")
-        except discord.errors.Forbidden:
-            await msg.edit(content="I am not allowed to send you a DM, look at my User profile there is also a invite link!")
+        if ctx.guild.id == 929675934280323082:
+            invitelink = ("https://discord.com/api/oauth2/authorize?client_id=929676015217803275&permissions=8&scope=bot")
+            msg = await ctx.send("Check your DMs")
+            try:
+                await ctx.author.send(f"`Invite Link`: {invitelink}")
+            except discord.errors.Forbidden:
+                await msg.edit(content="I am not allowed to send you a DM, look at my User profile there is also a invite link!")
+                return
+        if ctx.guild.id != 929675934280323082:
+            await ctx.send("Sorry! You must join https://discord.gg/zGcYSP4w6a to get the invite")
+            return 
+
 
     @commands.command(description="Shows information about this server")
     async def serverinfo(self, ctx):
