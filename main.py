@@ -1,5 +1,6 @@
 import discord
 import platform
+from keep_alive import keep_alive
 from discord.ext import commands, tasks
 import os
 from Tools.utils import getConfig, getGuildPrefix, updateConfig
@@ -132,5 +133,5 @@ async def uptime(ctx):
                           color=discord.Colour.blue())
     await ctx.send(embed=embed)
 
-
+keep_alive()
 client.run(os.environ.get("TOKEN"))
