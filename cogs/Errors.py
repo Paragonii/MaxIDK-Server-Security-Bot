@@ -23,19 +23,19 @@ class Errors(commands.Cog):
             await ctx.send(embed=embed)
 
         if isinstance(error, commands.MissingPermissions):
-            emote = ("<a:checkno:895020333986353172>")
+            emote = ("❌")
             await ctx.send(f"You must have a higher role to use this command {emote}")
 
         if isinstance(error, commands.MemberNotFound):
-            emote = ("<a:checkno:895020333986353172>")
+            emote = ("❌")
             await ctx.send(f"Member not found {emote}")
 
         if isinstance(error, commands.RoleNotFound):
-            emote = ("<a:checkno:895020333986353172>")
+            emote = ("❌")
             await ctx.send(f"Role not found {emote}")
 
         if isinstance(error, commands.BotMissingPermissions):
-            emote = ("<a:checkno:895020333986353172>")
+            emote = ("❌")
             await ctx.send(f"Missing some important permissions, check if Server Security has the administrator permission {emote}")
 
 
