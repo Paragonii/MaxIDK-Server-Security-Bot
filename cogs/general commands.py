@@ -40,7 +40,7 @@ class General(commands.Cog):
 
     @commands.command(description="Sends you a bot invite link via DM")
     async def invite(self, ctx):
-        if ctx.guild.id == 929675934280323082:
+        if ctx.guild.id == 929675934280323082 and ctx.channel.id == 929675934758481942:
             invitelink = ("https://discord.com/api/oauth2/authorize?client_id=929676015217803275&permissions=8&scope=bot")
             msg = await ctx.send("Check your DMs")
             try:
@@ -48,8 +48,8 @@ class General(commands.Cog):
             except discord.errors.Forbidden:
                 await msg.edit(content="I am not allowed to send you a DM, look at my User profile there is also a invite link!")
                 return
-        if ctx.guild.id != 929675934280323082:
-            await ctx.send("Sorry! You must join https://discord.gg/zGcYSP4w6a to get the invite")
+        else:
+            await ctx.send("Sorry! You must join https://discord.gg/zGcYSP4w6a to get the invite. If you are, in there then head to <#929675934758481942> and get the invite there.")
             return 
 
 
