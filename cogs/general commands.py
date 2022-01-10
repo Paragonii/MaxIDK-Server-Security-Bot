@@ -630,7 +630,7 @@ class General(commands.Cog):
         await ctx.send(embed=role)
 
     @commands.command(usage="user id", description="Shows you information about a user who is not on this server")
-    async def fetchuser(self, ctx, user: discord.User = id):
+    async def fetchuser(self, ctx, uuser: discord.User = id):
         emote = ("👉")
         user = await self.client.fetch_user(int(user.id))
         embed = discord.Embed(colour=0x2f3136, title=f"Who is {user.name}?")
