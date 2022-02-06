@@ -9,3 +9,4 @@ pytz
 discord-py-slash-command
 kwargs
 discapty
+dislash.py
