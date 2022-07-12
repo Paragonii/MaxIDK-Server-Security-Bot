@@ -1,7 +1,7 @@
 # Server-Security-Discord-Bot
 Anti-Nuke capabilities, powerful moderation features, auto punishments, captcha-verification and more.
 
-##Message
+## Message
 So this used to be MaxIDK's bot until he deleted it so i guess that pretty much means i own the bot now (???)
 
 ## Tip
