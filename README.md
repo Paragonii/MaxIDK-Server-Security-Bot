@@ -2,7 +2,7 @@
 Anti-Nuke capabilities, powerful moderation features, auto punishments, captcha-verification and more.
 
 ## Message
-So this used to be MaxIDK's bot until he deleted it so i guess that pretty much means i own the bot now (???)
+So this used to be MaxIDK's bot until he deleted it so i guess that pretty much means i own the bot now (???). If you wanna help, you can join the [discord](https://discord.gg/f8hBWvft8z)
 
 ## Tip
 A little tip from me, you can copy the code or download the files. But you have no real learning effect. So if you use the code then please analyze it and go through it so you understand how it is built and how it works! 
